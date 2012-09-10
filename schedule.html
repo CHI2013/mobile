@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content="width=device-width, initial-scale=1">
+	<title> CHI'13 Schedule </title>
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.1.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
+	<link rel="stylesheet" href="css/custom.css"/>
+	<script src="js/jquery-1.7.1.min.js"> </script>
+	<script src="js/jquery.mobile-1.1.1.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="home" data-theme="a">
+		<div data-role="header" style="height:10%">
+			<a href="index.html" data-role="button" data-icon="arrow-l">Previous</a>
+			<h1> CHI'13 </h1>
+			<a href="index.html" data-role="button" data-icon="refresh">Now</a>
+		</div>
+		<div data-role="content">
+			<div id="branding">
+				<h1> Current Events</h1>
+			</div>
+			<div class="choice_list">
+				<ul data-role="listview" data-insert="true" >
+					<!-- <li class="short"><a href="talk.html" data-transition="slide"><img src="img/add.png"/> <h3>Fancy Talk Title</h3><p>Something about humans...</p></a></li>
+ -->
+					<li class="short">
+						<a href="#.html" data-transition="slide"> <img class="changer" src="img/add.png" data-altsrc='img/remove.png'/>  <h3>Some Talk </h3></a>
+						
+						<a href="talk.html" data-transition="slide"> </a>
+					</li>
+
+					<li class="short">
+						<a href="#.html" data-transition="slide"> <img class="changer" src="img/add.png" data-altsrc='img/remove.png'/>  <h3>Some Talk </h3></a>
+						
+						<a href="talk.html" data-transition="slide"> </a>
+					</li>
+
+					<li class="short">
+						<a href="#.html" data-transition="slide"> <img class="changer" src="img/add.png" data-altsrc='img/remove.png'/>  <h3>Some Talk </h3></a>
+						
+						<a href="talk.html" data-transition="slide"> </a>
+					</li>
+
+					<li class="short">
+						<a href="#.html" data-transition="slide"> <img class="changer" src="img/add.png" data-altsrc='img/remove.png'/>  <h3>Some Talk </h3></a>
+						
+						<a href="talk.html" data-transition="slide"> </a>
+					</li>
+
+					<li class="short">
+						<a href="#.html" data-transition="slide"> <img class="changer" src="img/add.png" data-altsrc='img/remove.png'/>  <h3>Some Talk </h3></a>
+						
+						<a href="talk.html" data-transition="slide"> </a>
+					</li>
+
+					<li class="short">
+						<a href="#.html" data-transition="slide"> <img class="changer" src="img/add.png" data-altsrc='img/remove.png'/>  <h3>Some Talk </h3></a>
+						
+						<a href="talk.html" data-transition="slide"></a>
+					</li>
+
+<!-- 					<li  class="short" id="listitem"> Swipe me right! </li>
+ -->
+				</ul>
+			</div>
+		</div>
+	</div> <!-- END PAGE -->
+
+<script>
+
+//Code to test  swipe gesture on tile
+$("#listitem").swiperight(function() {
+    $.mobile.changePage("talk.html");
+});
+
+//Change tile status
+$(function(){
+	$('img.changer').click(function(){
+ //grab the image just clicked as a jquery object.
+    var img = $(this);
+
+    console.log(img.data('mode'));
+
+    if( img.data('mode') === 'alt')
+    {
+    	img
+    	.attr('src', img.data('originalsrc'))
+    	.data('mode','src');
+    }
+    else
+    {
+    	img 
+    	.data('originalsrc', img.attr('src')) //stow the original src
+        .attr('src', img.data('altsrc'))      //update the src
+        .data('mode','alt');                  //tag that the img is in alt mode.
+    }	
+     console.log(img.data('mode'));
+	});
+});
+
+</script>
+
+</body>
+
+</html>
