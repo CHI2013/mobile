@@ -107,11 +107,27 @@ padding:1%;
 	padding-left: 66px;
 }
 .short{
-	height: 66px;
+	height: 60px;
 }
 
-
-
+.light_blue{
+	background: #8DD3C7;
+}
+.orange{
+	background: #FDB462;
+}
+.purple{
+	background: #BEBADA;
+}
+.red{
+	background: #FB8072;
+}
+.blue{
+	background: #80B1D3;
+}
+.green{
+	background: #B3DE69;
+}
 /* Main page HOME styling */
 
 #branding{
